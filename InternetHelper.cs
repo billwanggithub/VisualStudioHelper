@@ -10,13 +10,13 @@ namespace Internet
     public class InternetHelper
     {
         public static readonly string testUrl = "http://www.google.com"; // Replace with the URL you want to check
-        public static readonly List<string> pingUrls = new() { @"www.google.com", @"gitee.com" }; // Replace with the URL you want to check
+        public static readonly List<string> pingUrls = new List<string>() { @"www.google.com", @"gitee.com" }; // Replace with the URL you want to check
 
         public static async Task<bool> TestUrlAsync(string? url = null, int timeout = 1000)
         {
             // https://learn.microsoft.com/zh-tw/dotnet/api/system.threading.tasks.task.whenall?view=net-7.0
             url ??= testUrl;
-            using HttpClient client = new();
+            using HttpClient client = new HttpClient();
             try
             {
                 client.Timeout = TimeSpan.FromMilliseconds(timeout);
