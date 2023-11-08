@@ -1,36 +1,75 @@
 ﻿using Internet;
 using Markdig;
-using System.IO;
+using Markdig.Syntax;
 
 namespace Helper
 {
     public class MarkDownHelper
     {
-        public static bool OpenUserGuideFromLocal(string? name)
+        /// <summary>
+        /// Convert MarkDown to HTML
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <returns></returns>
+        public static bool OpenUserGuideFromLocal(string? input, string? output = null)
         {
             string MarkdownDoc = "";
 
-            if (name is null)
+            if (input is null)
                 return false;
 
             //++ Read from embeded resource
-            using (Stream? stream = File.OpenRead(name))
+            using (Stream? stream = File.OpenRead($"{input}"))
             {
                 if (stream == null)
                 {
-                    MarkdownDoc = string.Format("Could not find sample text {0}", name);
+                    MarkdownDoc = string.Format("Could not find sample text {0}", input);
                 }
                 else
-                    using (StreamReader reader = new(stream))
+                    using (StreamReader reader = new StreamReader(stream))
                     {
                         MarkdownDoc = reader.ReadToEnd();
                     }
             }
 
             //++ Convert Markdown to Html
-            var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().UseEmojiAndSmiley().UseTableOfContent().UsePipeTables().UseGridTables().Build();
-            string markdownHtml = Markdown.ToHtml(MarkdownDoc, pipeline);
-            string helpPath = $"{Directory.GetCurrentDirectory()}/UserGuide.html";
+            var pipeline = new MarkdownPipelineBuilder()
+                .UseAbbreviations()
+                .UseAutoIdentifiers()
+                .UseCitations()
+                .UseDefinitionLists()
+                .UseEmphasisExtras()
+                .UseFigures()
+                .UseFooters()
+                .UseFootnotes()
+                .UseGridTables()
+                .UseMathematics()
+                .UseMediaLinks()
+                .UsePipeTables()
+                .UseListExtras()
+                .UseTaskLists()
+                .UseDiagrams()
+                .UseAutoLinks()
+                .UseGenericAttributes()
+                .UseEmojiAndSmiley()
+                .UseTableOfContent()
+                .UsePipeTables()
+                .UseGridTables()
+                .UseMathematics()
+                .UseTableOfContent()
+                .Build();
+
+            MarkdownDocument document = Markdown.Parse(MarkdownDoc, pipeline);
+            string markdownHtml = document.ToHtml(pipeline);
+
+
+            string helpPath = $"{Directory.GetCurrentDirectory()}/{Path.GetFileNameWithoutExtension(input)}.html";
+            if (output is not null)
+            {
+                helpPath = $"{Directory.GetCurrentDirectory()}/{Path.GetFileNameWithoutExtension(output)}.html";
+            }
+
             File.WriteAllText(helpPath, markdownHtml);
 
             //++ Open with default Browser
