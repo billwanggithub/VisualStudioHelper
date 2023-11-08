@@ -1,9 +1,8 @@
+[TOC]
+
 # GMT Motor Test Kit User Manual
 
 ![Gmt Logo](Assets/gmt_logo.png)
-
-Table Of Content
-[TOC]
 ___
 <style>
 p {
@@ -29,6 +28,9 @@ td {
 ➡️每次測試時都會在Working Folder中建立一個Test Folder如 <span style="color: red;">rolling_mmdd_hhmmss</span>(會用目前的日期時間為流水號為Test Folder命名)<br>
 ➡️所有測試結果都會存放於此Test Folder
 </p>
+
+When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are 
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 ### **Menu and Tool Bar**
 

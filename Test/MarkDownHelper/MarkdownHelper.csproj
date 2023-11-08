@@ -13,7 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\MarkDownHelper.md" Link="MarkDownHelper.md" />
+    <Content Include="..\..\Assets\markdownhelper.png" Link="Assets\markdownhelper.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\MarkDownHelper.md" Link="MarkDownHelper.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
