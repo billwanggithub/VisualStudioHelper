@@ -1,6 +1,7 @@
 ﻿using Internet;
 using Markdig;
 using Markdig.Syntax;
+using System.IO;
 
 namespace Helper
 {
@@ -65,7 +66,7 @@ namespace Helper
 
 
             string helpPath = $"{Directory.GetCurrentDirectory()}/{Path.GetFileNameWithoutExtension(input)}.html";
-            if (output is not null)
+            if (output != null)
             {
                 helpPath = $"{Directory.GetCurrentDirectory()}/{Path.GetFileNameWithoutExtension(output)}.html";
             }
