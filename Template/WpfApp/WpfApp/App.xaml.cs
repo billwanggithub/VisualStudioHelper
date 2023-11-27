@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,10 +15,11 @@ namespace WpfApp
     /// </summary>
     public partial class App : Application
     {
+        Mutex? singleInstanceMutex;
         public new static App Current => (App)Application.Current;
         public IServiceProvider? Services { get; }
 
-        private Mutex? singleInstanceMutex;
+        //private Mutex? singleInstanceMutex;
 
         public ViewModel? viewModel;  //用APP.Current.ViewMode存取, 如果找不到物件時，會直接回傳 null 空值
         public static MainWindow? mainWindow { get; set; }
@@ -51,10 +53,12 @@ namespace WpfApp
             // If the mutex is already created by another instance, exit the application
             if (!createdNew)
             {
-                Log.Warning("Another instance of the application is already running.");
+                string msg = "Another instance of the application is already running.";
+                Log.Warning(msg);
+                MessageBox.Show(msg);
                 WindowsService.ActivateWindow(windowTitle);
                 Application.Current.Shutdown();
-                return;
+                Process.GetCurrentProcess().Kill();
             }
 
             Log.Warning("Create New Window");
@@ -76,9 +80,9 @@ namespace WpfApp
 
         protected override void OnExit(ExitEventArgs e)
         {
+            //MessageBox.Show("App Exist");
             // Release the mutex on application exit
             singleInstanceMutex?.ReleaseMutex();
-
             base.OnExit(e);
         }
 
