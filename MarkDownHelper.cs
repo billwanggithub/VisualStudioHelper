@@ -20,7 +20,7 @@ namespace Helper
             if (input is null)
                 return false;
 
-            //++ Read from embeded resource
+            //++ Read from embedded resource
             using (Stream? stream = File.OpenRead($"{input}"))
             {
                 if (stream == null)
