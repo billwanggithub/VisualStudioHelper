@@ -1,0 +1,49 @@
+﻿2023-11-27 16:06:19.495 +08:00 [WRN] Create New Window
+2023-11-27 16:06:26.439 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:06:28.849 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:06:38.840 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:09:20.086 +08:00 [WRN] Create New Window
+2023-11-27 16:09:28.280 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:09:29.903 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:09:30.821 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:09:31.545 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:13:31.316 +08:00 [WRN] Create New Window
+2023-11-27 16:13:39.082 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:13:39.111 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:13:52.618 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:13:58.401 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:14:37.211 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:18:07.545 +08:00 [WRN] Create New Window
+2023-11-27 16:18:24.481 +08:00 [WRN] Create New Window
+2023-11-27 16:18:32.742 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:18:43.259 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:18:56.437 +08:00 [WRN] Create New Window
+2023-11-27 16:19:03.011 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:19:03.040 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:23:32.814 +08:00 [WRN] Create New Window
+2023-11-27 16:23:38.444 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:23:38.473 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:28:59.536 +08:00 [WRN] Create New Window
+2023-11-27 16:29:05.184 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:29:05.213 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:29:08.599 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:29:08.627 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:29:12.054 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:29:12.083 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:29:16.091 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:29:16.121 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:30:08.689 +08:00 [WRN] Create New Window
+2023-11-27 16:30:52.446 +08:00 [WRN] Create New Window
+2023-11-27 16:31:14.695 +08:00 [WRN] Create New Window
+2023-11-27 16:32:28.776 +08:00 [WRN] Create New Window
+2023-11-27 16:33:38.776 +08:00 [WRN] Create New Window
+2023-11-27 16:34:15.920 +08:00 [WRN] Create New Window
+2023-11-27 16:35:01.942 +08:00 [WRN] Create New Window
+2023-11-27 16:39:04.871 +08:00 [WRN] Create New Window
+2023-11-27 16:39:17.832 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:39:17.863 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:39:29.166 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:39:29.195 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
+2023-11-27 16:39:48.308 +08:00 [WRN] Create New Window
+2023-11-27 16:39:56.506 +08:00 [WRN] Another instance of the application is already running.
+2023-11-27 16:39:56.536 +08:00 [INF] Find Window = Vanara.PInvoke.HWND
