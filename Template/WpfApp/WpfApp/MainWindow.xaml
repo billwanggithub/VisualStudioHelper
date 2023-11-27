@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
+        xmlns:ce="clr-namespace:ControlExtention"
         Title="{Binding WindowTitle}" SizeToContent="WidthAndHeight">
-    <StackPanel>
-        <StackPanel>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
             <TextBlock Text="IntObj"></TextBlock>
             <TextBlock Text="{Binding IntObj, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Background="Yellow"></TextBlock>
         </StackPanel>
-        <StackPanel>
+        <StackPanel DockPanel.Dock="Top">
             <TextBlock Text="StringObj"></TextBlock>
             <TextBlock Text="{Binding StringObj,  UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Background="Yellow"></TextBlock>
         </StackPanel>
-        <Button Command="{Binding TestFunctionCommand}" CommandParameter="200">Test Relay Command</Button>
-    </StackPanel>
+        <Button Command="{Binding TestFunctionCommand}" CommandParameter="200" DockPanel.Dock="Top">Test Relay Command</Button>
+        <ce:ScrollingDataGrid  ItemsSource="{Binding People}" AutoGenerateColumns="True"/>
+    </DockPanel>
 </Window>

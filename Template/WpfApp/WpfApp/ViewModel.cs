@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
+using System.Collections.ObjectModel;
 
 
 // TODO: Hotkey binding 
@@ -21,6 +22,21 @@ namespace WpfApp
         [ObservableProperty]
         string stringObj = "WpfApp";
         #endregion
+
+        public class Person
+        {
+            public string? Name { get; set; }
+            public int Age { get; set; }
+        }
+
+        [ObservableProperty]
+        public ObservableCollection<Person>? people = new ObservableCollection<Person>
+            {
+                new Person { Name = "John Doe", Age = 30 },
+                new Person { Name = "Jane Doe", Age = 25 },
+                // Add more persons as needed
+            };
+
 
         #region Command Binding
         [RelayCommand]
