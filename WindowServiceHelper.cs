@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
 using System.Runtime.InteropServices;
+using System.Windows;
 
+
+// Please Install Vanara.PInvoke.Kernel32, Vanara.PInvoke.Kernel32, Vanara.PInvoke.User32
 // https://www.pinvoke.net/index.aspx
 
 namespace Helper
