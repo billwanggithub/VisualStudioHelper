@@ -9,7 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="WindowServiceHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\..\..\ScrollingDataGrid.cs" Link="ScrollingDataGrid.cs" />
+    <Compile Include="..\..\..\WindowServiceHelper.cs" Link="WindowServiceHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +24,7 @@
     <PackageReference Include="Serilog" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.Console" Version="5.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
     <PackageReference Include="Vanara.PInvoke.Kernel32" Version="3.4.17" />
     <PackageReference Include="Vanara.PInvoke.User32" Version="3.4.17" />
   </ItemGroup>

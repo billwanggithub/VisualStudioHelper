@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xsYzqy+C/gYcMXFdEAtK8HdHe61ZUSDkdiuFWGggnqc+6LEfUEnBz4mq4cUSu/jmVGpYXvC78w0/KN/K88vokg==",
+  "dgSpecHash": "Ygj86H+Z3H8BVJr9zzOoFjaAWN/+88S6od1OaWVYoy90FHq1WgmM05vjU0EitCjdaBceM5HfgVbItzJly8bJQg==",
   "success": true,
   "projectFilePath": "D:\\github\\VisualStudioHelper\\Template\\WpfApp\\WpfApp\\WpfApp.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\billwang\\.nuget\\packages\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
     "C:\\Users\\billwang\\.nuget\\packages\\serilog.sinks.console\\5.0.0\\serilog.sinks.console.5.0.0.nupkg.sha512",
     "C:\\Users\\billwang\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
+    "C:\\Users\\billwang\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
+    "C:\\Users\\billwang\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512",
     "C:\\Users\\billwang\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\billwang\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\billwang\\.nuget\\packages\\vanara.core\\3.4.17\\vanara.core.3.4.17.nupkg.sha512",
