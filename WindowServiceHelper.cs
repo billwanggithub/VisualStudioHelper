@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Management;
-using System.Runtime.InteropServices;
 using System.Windows;
 using Vanara.PInvoke;
+//using static Vanara.PInvoke.Kernel32;
 using static Vanara.PInvoke.User32;
 
 // Please Install
+// https://www.pinvoke.net/index.aspx
 // - Vanara.PInvoke.Kernel32
 // - Vanara.PInvoke.Kernel32
 // - Vanara.PInvoke.User32
 // - Serilog.Sinks.File
 // - Serilog.Extensions.Logging
-// https://www.pinvoke.net/index.aspx
+// Add The following lines
+// - using static Vanara.PInvoke.Kernel32;
+// - using static Vanara.PInvoke.User32;
 
 namespace Helper
 {
@@ -187,19 +190,19 @@ namespace Helper
         * https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate
         */
 
-        [DllImport("kernel32.dll")]
-        private static extern uint SetThreadExecutionState(uint esFlags);
+        //[DllImport("kernel32.dll")]
+        //private static extern uint SetThreadExecutionState(uint esFlags);
 
-        [FlagsAttribute]
-        public enum EXECUTION_FLAG : uint
-        {
-            ES_AWAYMODE_REQUIRED = 0x00000040,
-            ES_CONTINUOUS = 0x80000000,
-            ES_DISPLAY_REQUIRED = 0x00000002,
-            ES_SYSTEM_REQUIRED = 0x00000001
-            // Legacy flag, should not be used.
-            // ES_USER_PRESENT = 0x00000004
-        }
+        //[FlagsAttribute]
+        //public enum EXECUTION_FLAG : uint
+        //{
+        //    ES_AWAYMODE_REQUIRED = 0x00000040,
+        //    ES_CONTINUOUS = 0x80000000,
+        //    ES_DISPLAY_REQUIRED = 0x00000002,
+        //    ES_SYSTEM_REQUIRED = 0x00000001
+        //    // Legacy flag, should not be used.
+        //    // ES_USER_PRESENT = 0x00000004
+        //}
 
         /*
             實現下載時阻止程序休眠，則有兩種實現方式：
@@ -215,9 +218,12 @@ namespace Helper
         {
             //Enable S3\S4
             if (includeDisplay)
-                SetThreadExecutionState((uint)(EXECUTION_FLAG.ES_SYSTEM_REQUIRED | EXECUTION_FLAG.ES_DISPLAY_REQUIRED | EXECUTION_FLAG.ES_CONTINUOUS));
+                Kernel32.SetThreadExecutionState(Kernel32.EXECUTION_STATE.ES_SYSTEM_REQUIRED |
+                    Kernel32.EXECUTION_STATE.ES_DISPLAY_REQUIRED |
+                    Kernel32.EXECUTION_STATE.ES_CONTINUOUS);// (uint)(EXECUTION_FLAG.ES_SYSTEM_REQUIRED | EXECUTION_FLAG.ES_DISPLAY_REQUIRED | EXECUTION_FLAG.ES_CONTINUOUS));
             else
-                SetThreadExecutionState((uint)(EXECUTION_FLAG.ES_SYSTEM_REQUIRED | EXECUTION_FLAG.ES_CONTINUOUS));
+                Kernel32.SetThreadExecutionState(Kernel32.EXECUTION_STATE.ES_SYSTEM_REQUIRED |
+                    Kernel32.EXECUTION_STATE.ES_CONTINUOUS);
         }
 
         /// <summary>
@@ -226,7 +232,7 @@ namespace Helper
         public static void ResotreSleep()
         {
             //Enable S3\S4
-            SetThreadExecutionState((uint)EXECUTION_FLAG.ES_CONTINUOUS);
+            Kernel32.SetThreadExecutionState(Kernel32.EXECUTION_STATE.ES_CONTINUOUS);
         }
     }
 }
