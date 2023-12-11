@@ -5,7 +5,7 @@ using System.Management;
 using System.Windows;
 using Vanara.PInvoke;
 //using static Vanara.PInvoke.Kernel32;
-using static Vanara.PInvoke.User32;
+//using static Vanara.PInvoke.User32;
 
 // Please Install
 // https://www.pinvoke.net/index.aspx
@@ -105,21 +105,21 @@ namespace Helper
             window.Dispatcher.Invoke(new Action(() =>
             {
                 var hwnd = new System.Windows.Interop.WindowInteropHelper(window).Handle;
-                var hMenu = GetSystemMenu(hwnd, false);
+                var hMenu = User32.GetSystemMenu(hwnd, false);
                 if (enable)
-                    EnableMenuItem(hMenu, SC_CLOSE, MenuFlags.MF_ENABLED);
+                    User32.EnableMenuItem(hMenu, SC_CLOSE, User32.MenuFlags.MF_ENABLED);
                 else
-                    EnableMenuItem(hMenu, SC_CLOSE, MenuFlags.MF_GRAYED);
+                    User32.EnableMenuItem(hMenu, SC_CLOSE, User32.MenuFlags.MF_GRAYED);
             }));
         }
 
         public static HWND ActivateWindow(string windowname)
         {
-            var otherWindow = FindWindow(null, windowname);
+            var otherWindow = User32.FindWindow(null, windowname);
             Serilog.Log.Information($"Find Window = {otherWindow}");
             if (otherWindow != IntPtr.Zero) // Already Running
             {
-                SetForegroundWindow(otherWindow);
+                User32.SetForegroundWindow(otherWindow);
             }
             return otherWindow;
         }
